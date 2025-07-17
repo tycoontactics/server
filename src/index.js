@@ -14,7 +14,6 @@ import { app, server } from "./lib/socket.js";
 dotenv.config();
 
 const PORT = process.env.PORT;
-// const  __dirname = path.resolve();
 const allowedOrigins = ["https://localhost:5173", "https://tycoontactics.github.io"];
 
 app.use(express.json());    
@@ -34,5 +33,5 @@ app.use("/api/game", gameRoutes);
 server.listen(PORT, () => {
     console.log("server running on", PORT);
     connectDB();
-    setInterval(deleteInactiveGames, 24*60*60*1000);
+    setInterval(deleteInactiveGames, 23*60*60*1000);
 });
